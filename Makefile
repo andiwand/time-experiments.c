@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-c -std=c11 -Wall -D _GNU_SOURCE
+CFLAGS=-c -std=c11 -Wall -O2 -D _GNU_SOURCE
 LDFLAGS=
 
 all: adjtimex delay_system gpio_station gpio_polling

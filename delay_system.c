@@ -7,7 +7,7 @@
 #include "shared.h"
 
 int main(int argc, char** argv) {
-    argc -= 1; argv = argv + 1;
+    char* prog = argv[0]; argv = argv + 1; argc--;
 
     float interval;
 
@@ -16,9 +16,11 @@ int main(int argc, char** argv) {
         interval = strtof(argv[0], NULL);
         break;
     default:
-        printf("delay_system INTERVAL\n");
+        fprintf(stderr, "usage: %s <interval> [<flags]\n", prog);
         return 1;
     }
+    
+    defaults();
 
     struct timespec ts1;
     struct timespec ts2;

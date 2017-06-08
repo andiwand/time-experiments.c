@@ -5,10 +5,10 @@
 #include <sys/timex.h>
 
 int main(int argc, char** argv) {
-  argc -= 1; argv = argv + 1;
+  char* prog = argv[0]; argv = argv + 1; argc--;
   if (argc == 0) {
-    // TODO: print usage
-    return 0;
+    fprintf(stderr, "usage: %s\n", prog);
+    return 1;
   }
 
   if (argc & 1) {

@@ -8,6 +8,8 @@
 #include <sys/resource.h>
 #include <sched.h>
 
+#include "gpio.h"
+
 char* trim(const char* str) {
     while (isspace((unsigned char) *str)) str++;
 
@@ -67,11 +69,8 @@ void fsleep(float time) {
     usleep((unsigned int) time);
 }
 
-void defaults(gpio_t* gpio) {
+void defaults() {
     setbuf(stdout, NULL);
-    
-    int version = rpi_version();
-    *gpio = gpio_setup(version);
     
     cpu_set_t mask;
     CPU_ZERO(&mask);

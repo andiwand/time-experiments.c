@@ -9,7 +9,7 @@
 #include "shared.h"
 
 int main(int argc, char** argv) {
-    argc -= 1; argv = argv + 1;
+    char* prog = argv[0]; argv = argv + 1; argc--;
 
     int flags = EDGE_RISING | EDGE_FALLING;
     int pin;
@@ -21,12 +21,12 @@ int main(int argc, char** argv) {
         pin = strtol(argv[0], NULL, 10);
         break;
     default:
-        printf("gpio_polling PIN [FLAGS]\n");
+        fprintf(stderr, "usage: %s <pin> [<flags]\n", prog);
         return 1;
     }
 
-    gpio_t gpio;
-    defaults(&gpio);
+    defaults();
+    gpio_t gpio = gpio_setup(rpi_version());
 
     INP_GPIO(gpio, pin);
 

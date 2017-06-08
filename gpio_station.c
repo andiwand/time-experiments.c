@@ -15,7 +15,7 @@ gpio_t gpio;
 int pin;
 
 int main(int argc, char** argv) {
-    argc -= 1; argv = argv + 1;
+    char* prog = argv[0]; argv = argv + 1; argc--;
 
     float interval = 1;
 
@@ -26,11 +26,12 @@ int main(int argc, char** argv) {
         pin = strtol(argv[0], NULL, 10);
         break;
     default:
-        printf("gpio_station PIN [INTERVAL]\n");
+        fprintf(stderr, "usage: %s <pin> [<interval]\n", prog);
         return 1;
     }
 
-    defaults(&gpio);
+    defaults();
+    gpio = gpio_setup(rpi_version());
 
     INP_GPIO(gpio, pin);
     OUT_GPIO(gpio, pin);

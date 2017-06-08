@@ -2,13 +2,12 @@
 #define SHARED_H_
 
 #include <time.h>
-#include "gpio.h"
 
 char* trim(const char* str);
 char* get_cpuinfo(const char* param);
 int rpi_version();
 void fsleep(float time);
-void defaults(gpio_t* gpio);
+void defaults();
 
 unsigned long time_long_ns(struct timespec *ts);
 unsigned long time_long_us(struct timespec *ts);

@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
         pin = strtol(argv[0], NULL, 10);
         break;
     default:
-        fprintf(stderr, "usage: %s <pin> [<flags]\n", prog);
+        fprintf(stderr, "usage: %s <pin> [<flags]\n\npolls the specified pin for state changes and prints the local time\n", prog);
         return 1;
     }
 

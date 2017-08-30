@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     struct timespec ts;
     
     if (argc != 2) {
-        fprintf(stderr, "usage: %s <ttydev>\n", argv[0]);
+        fprintf(stderr, "usage: %s <ttydev>\n\nprints the local time on a nmea signal\n", argv[0]);
         return 1;
     }
     

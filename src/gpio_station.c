@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
         pin = strtol(argv[0], NULL, 10);
         break;
     default:
-        fprintf(stderr, "usage: %s <pin> [<interval]\n", prog);
+        fprintf(stderr, "usage: %s <pin> [<interval]\n\nsends digital signals to the given pin with a constant interval\n", prog);
         return 1;
     }
 

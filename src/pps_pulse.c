@@ -119,7 +119,7 @@ retry:
 
 void usage(char *name)
 {
-	fprintf(stderr, "usage: %s <ppsdev>\n", name);
+	fprintf(stderr, "usage: %s <ppsdev>\n\nprints the local time on a pps signal\n", name);
 	exit(EXIT_FAILURE);
 }
 

@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
         interval = strtof(argv[0], NULL);
         break;
     default:
-        fprintf(stderr, "usage: %s <interval> [<flags]\n", prog);
+        fprintf(stderr, "usage: %s <interval> [<flags]\n\nmeasures the system delay between two clock calls\n", prog);
         return 1;
     }
     
